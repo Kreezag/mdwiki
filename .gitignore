@@ -8,3 +8,5 @@ app/components
 md/
 .DS_Store
 .AppleDouble
+
+.idea/
