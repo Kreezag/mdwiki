@@ -1,10 +1,14 @@
-# My personal wiki
+# Personal wiki
+
+Here is a collection of notes and snippets that I have found useful.
 
 
-## Topics
-
-- [Programming](programming/index.md)
-- [Math](math/index.md)
-- [Science](science/index.md)
+## Web
 
 
+- [web](web/index.md)
+
+
+## Rust
+
+- [rust](rust/index.md)
