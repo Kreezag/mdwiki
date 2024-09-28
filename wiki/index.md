@@ -6,9 +6,9 @@ Here is a collection of notes and snippets that I have found useful.
 ## Web
 
 
-- [web](web/index.md)
+- [web docs](web/index.md)
 
 
 ## Rust
 
-- [rust](rust/index.md)
+- [rust docs](rust/index.md)
