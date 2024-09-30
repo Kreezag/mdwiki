@@ -26,6 +26,8 @@
 
 `cargo add {package}` - install dependency
 
+`cargo test` - run tests
+
 
 
 
@@ -41,3 +43,59 @@ we can use shadowed vars:
     …
     let x = 2	
 
+
+## In code testing
+
+`#[cfg(test)]` - attribute to indicate that the code is only used during testing
+`#[test]` - attribute to indicate that the function is a test function
+
+`assert_eq!` - macro to compare two values
+`assert!` - macro to check if the value is true
+`assert_ne!` - macro to check if two values are not equal
+
+`assert!(value.is_err())` - check if the result is an error of Type Result<T, E>
+
+`#[should_panic]` - attribute to indicate that the test should panic
+
+`#[ignore]` - attribute to ignore the test
+
+
+
+```rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_add() {
+        assert_eq!(add(1, 2), 3);
+    }
+}
+```
+
+```rust
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+    if value < 1 || value > 100 {
+        panic!("Guess value must be between 1 and 100, got {value}.");
+    }
+
+        Guess { value }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+use super::*;
+
+    #[test]
+    #[should_panic]
+    fn greater_than_100() {
+        Guess::new(200);
+    }
+}
+```
