@@ -30,5 +30,42 @@ let add_one_v3 = |x|             { x + 1 }; // no types annotation closure
 let add_one_v4 = |x|               x + 1  ; // no braces closure
 ```
 
+Closure may be defined as variable but may be called as function:
+```rust
+let add_one = |x| x + 1;
+let five = add_one(4);
+```
+
+Closures types
+
+`FnOnce` - consumes the variables it captures from its enclosing scope, known as the closure’s environment.
+
+`unwrap_or_else` realized with `FnOnce`:
+```rust
+impl<T> Option<T> {
+    pub fn unwrap_or_else<F>(self, f: F) -> T
+    where
+        F: FnOnce() -> T
+    {
+        match self {
+            Some(x) => x,
+            None => f(),
+        }
+    }
+}
+```
+
+`FnMut` - can change the environment because it mutably borrows values.
+
+`sort_by_key` realized with `FnMut`:
+
+```rust
+pub fn sort_by_key<T, F, K>(slice: &mut [T], key_fn: F)
+where
+    F: FnMut(&T) -> K,
+    K: Key,
+```
+
+
 
 
