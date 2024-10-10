@@ -67,5 +67,34 @@ where
 ```
 
 
+## Iterators
 
+Iterators is lazy
 
+`iter` - iterator for immutable references
+`iter_mut` - iterator for mutable references 
+`into_iter` - iterator that takes ownership of the collection
+
+Example: 
+
+```rust
+let v1 = vec![1, 2, 3];
+
+let v1_iter = v1.iter();
+
+for val in v1_iter {
+    println!("Got: {val}");
+}
+```
+
+All iterators implement trait method
+
+```rust
+pub trait Iterator {
+    type Item;
+
+    fn next(&mut self) -> Option<Self::Item>;
+
+    // methods with default implementations elided
+}
+```
