@@ -66,6 +66,58 @@ where
     K: Key,
 ```
 
+Closures in Rust are used structures:
+
+```rust
+let x = 4;
+
+let add_x = |num: i32 | x + num;
+```
+
+compiles to:
+
+```rust
+struct _AddX_ {
+    x: i32,
+}
+
+fn _add_x_(state: _AddX_, num: i32) -> i32 {
+    state.x + num
+}
+```
+
+result: 
+
+```rust
+let x = 4;
+
+let state = _AddX_ { x };
+
+let result = _add_x_(state, 1);
+```
+
+Example of Rust closures implementation: 
+
+FnOnce FnMut Fn - are traits that are implemented by closures
+
+```rust
+pub trait FnOnce<Args> {
+    type Output;
+    extern "rust-call" 
+    fn call_once(self, args: Args) -> Self::Output;
+}
+
+pub trait FnMut<Args>: FnOnce<Args> {
+    extern "rust-call" 
+    fn call_mut(&mut self, args: Args) -> Self::Output;
+}
+
+pub trait Fn<Args>: FnMut<Args> {
+    extern "rust-call" 
+    fn call(&self, args: Args) -> Self::Output;
+}
+```
+
 
 ## Iterators
 
