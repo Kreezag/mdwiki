@@ -1,7 +1,11 @@
 # Web technologies
 
+[◀ Back](../index.md)
 
-### Topics
+[Typescritp](typescript/ts-record-vs-object.md)
+
+
+## Resources
 
 - [##todo](#todo)
 
