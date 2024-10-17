@@ -1,5 +1,7 @@
 # Data Types
 
+[◀ Back](./index.md)
+
 ### Scalar types
 - Integer
     - i8, i16, i32, i64, i128, (arch: isize - signed)
