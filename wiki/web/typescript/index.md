@@ -11,3 +11,4 @@
 - [Type lvl typescript](https://type-level-typescript.com/) - paid resource for typescript learning
 - [TypeLevel typescript (part 1)](https://dev.to/eatyourabstractions/typelevel-typescript-a-cheat-sheet-2d80) - medium article
 - [TypeLevel typescript (part 2)](https://dev.to/eatyourabstractions/typelevel-typescript-a-practical-view-1j1m) - medium article
+- [Utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html) - official docs
