@@ -118,6 +118,8 @@ pub trait Fn<Args>: FnMut<Args> {
 }
 ```
 
+where `self`/`&mut self`/`&self` is a state of the closure are used.
+
 
 ## Iterators
 
