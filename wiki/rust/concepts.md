@@ -154,3 +154,16 @@ pub trait Iterator {
     // methods with default implementations elided
 }
 ```
+
+## Smart pointers `Box<T>`
+
+Smart pointers - data structures that act like pointers but have additional metadata and capabilities.
+Smart pointers allow data to be stored on the heap rather than the stack and have multiple data owners (reference counting).
+
+Most common smart pointers:
+
+`Box<T>` for allocating values on the heap
+
+`Rc<T>`, a reference counting type that enables multiple ownership
+
+`Ref<T>` and `RefMut<T>`, accessed through `RefCell<T>`, a type that enforces the borrowing rules at runtime instead of compile time`
