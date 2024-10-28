@@ -1,10 +1,12 @@
-# Rust Concepts
+# Typescript Record vs Object
 
 [◀ Back](../index.md)
+
 
 ## Resources
 
 [Type lvl typescript](https://type-level-typescript.com/objects-and-records) - record and object difference
+
 
 
 ### Object Types specific

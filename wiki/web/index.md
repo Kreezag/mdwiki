@@ -2,7 +2,9 @@
 
 [◀ Back](../index.md)
 
-[Typescritp](typescript/ts-record-vs-object.md)
+[Typescritp](typescript/index.md)
+
+[Nextjs](nextjs/index.md)
 
 
 ## Resources
