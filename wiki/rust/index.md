@@ -2,10 +2,15 @@
 
 [◀ Back](../index.md)
 
-[Data Types](./types)
+---
 
-[Concepts](./concepts.md)
+##### Pages:
 
+- [Data Types](./types.md)
+
+- [Concepts](./concepts.md)
+
+---
 
 ## Documentation
 

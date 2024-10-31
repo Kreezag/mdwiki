@@ -2,7 +2,9 @@
 
 [◀ Back](./index.md)
 
-### Scalar types
+---
+
+## Scalar types
 - Integer
     - i8, i16, i32, i64, i128, (arch: isize - signed)
     - u8, u16, u32, u64, u128, (arch: usize - unsigned)
@@ -14,7 +16,7 @@
 - Char / String
     - "a" - string literal
     - 'a' - char literal
-### Tuple
+## Tuple
 
 Tuples have a fixed length: once declared, they cannot grow or shrink in size.
 
@@ -24,12 +26,12 @@ let (x, y, z) = tup;
 let x: (i32, f64, u8) = (500, 6.4, 1);
 ```
 
-### Arrays
+## Arrays
 ```
   let a = [1, 2, 3, 4, 5];
   let a: [i32; 5] = [1, 2, 3, 4, 5];
 ```
-### Slices
+## Slices
 
 reference to a contiguous sequence of elements in a collection
 - `&` - reference
@@ -52,7 +54,7 @@ reference to a contiguous sequence of elements in a collection
         &s[..]
     }
 
-### Structures
+## Structures
 
     struct Person {
         name: String,
@@ -60,19 +62,19 @@ reference to a contiguous sequence of elements in a collection
     }
 
 
-### Enums
+## Enums
 
     enum IpAddrKind {
         V4,
         V6,
     }
 
-### Functions
+## Functions
 
     fn main () {}
     fn my_function() {}
 
-### vectors
+## vectors
 
     let v = vec![100, 32, 57];
     for i in &v {
@@ -87,7 +89,7 @@ will throw error: cannot borrow `v` as mutable because it is also borrowed as im
 
     println!("The first element is: {first}");
 
-#### Using vectors with enums:
+### Using vectors with enums:
 
     enum SpreadsheetCell {
         Int(i32),
@@ -102,7 +104,7 @@ will throw error: cannot borrow `v` as mutable because it is also borrowed as im
         ];
 
 
-### Hash map
+## Hash map
 
 create
 
@@ -132,7 +134,7 @@ or
     }
 
 
-### Generics
+## Generics
 
 Example of a generic function:
 
