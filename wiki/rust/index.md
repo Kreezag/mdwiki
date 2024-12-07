@@ -7,8 +7,8 @@
 ##### Pages:
 
 - [Data Types](./types.md)
-
 - [Concepts](./concepts.md)
+- [Tips and tricks](./tips-and-tricks.md)
 
 ---
 
