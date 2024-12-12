@@ -156,7 +156,9 @@ pub trait Iterator {
 }
 ```
 
-## Smart pointers `Box<T>`
+## Smart pointers 
+
+### `Box<T>` - for allocating values on the heap
 
 Smart pointers - data structures that act like pointers but have additional metadata and capabilities.
 Smart pointers allow data to be stored on the heap rather than the stack and have multiple data owners (reference counting).
@@ -168,3 +170,52 @@ Most common smart pointers:
 `Rc<T>`, a reference counting type that enables multiple ownership
 
 `Ref<T>` and `RefMut<T>`, accessed through `RefCell<T>`, a type that enforces the borrowing rules at runtime instead of compile time`
+
+
+### Rc<T> - for reference counting
+
+`Rc<T>` enables multiple ownership of the same data;
+it keeps track of the number of references to a value which determines whether or not a value is still in use.
+
+```rust
+use std::rc::Rc;
+
+let five = Rc::new(5);
+
+let five_clone = five.clone();
+
+println!("five: {five}, five_clone: {five_clone}");
+```
+
+### RefCell<T> - for interior mutability
+
+`RefCell<T>` allows mutable data to be accessed through immutable references.
+
+Allows mutable borrows checked at runtime.
+
+Mutating the value inside an immutable value is the interior mutability pattern. 
+Let’s look at a situation in which interior mutability is useful and examine how it’s possible.
+
+
+```rust
+use std::cell::RefCell;
+
+let value = RefCell::new(5);
+
+let mut value_mut = value.borrow_mut();
+
+*value_mut += 1;
+
+println!("value: {value_mut}");
+```
+
+Here is a recap of the reasons to choose Box<T>, Rc<T>, or RefCell<T>:
+
+- Rc<T> enables multiple owners of the same data; Box<T> and RefCell<T> have single owners.
+
+- Box<T> allows immutable or mutable borrows checked at compile time; 
+Rc<T> allows only immutable borrows checked at compile time; 
+RefCell<T> allows immutable or mutable borrows checked at runtime.
+
+- Because RefCell<T> allows mutable borrows checked at runtime, 
+you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.
